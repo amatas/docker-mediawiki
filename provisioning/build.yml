@@ -6,8 +6,8 @@
     - build-vars.yml
   roles:
     - facts
+    - php-fpm
     - nginx-common
     - nginx-site
-    - php-fpm
     - postfix-relay
 
