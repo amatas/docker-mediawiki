@@ -6,6 +6,8 @@ COPY provisioning/*.yml /etc/ansible/playbooks/
 
 RUN yum update -y && yum install -y nginx && yum clean all
 
+COPY provisioning/nginx.conf /etc/nginx/nginx.conf
+
 RUN ansible-galaxy install -r requirements.yml
 
 RUN ansible-playbook build.yml --tags "install,configure,deploy"
